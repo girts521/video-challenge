@@ -25,7 +25,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
 
-    fetch('https://gkarcevskis-ecomm.herokuapp.com/session', {
+    fetch('http://ecom.gkarcevskis.com/session', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
