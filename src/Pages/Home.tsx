@@ -25,21 +25,36 @@ const Home: React.FC = () => {
 
   useEffect(() => {
 
-    const auth = getAuth();
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        console.log("user logged in");
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/firebase.User
-        const uid = user.uid;
-        // ...
-      } else {
-        console.log("user logged out");
-        // User is signed out
-        // navigate to login
-        navigate("/login");
+    fetch('https://gkarcevskis-ecomm.herokuapp.com/session', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        credentials: 'include',
+        'Access-Control-Allow-Origin': 'https://gkarcevskis-ecomm.herokuapp.com',
+        "Access-Control-Allow-Credentials": 'true'
       }
-    });
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+    })
+    .catch(err => console.log(err));
+
+    // const auth = getAuth();
+    // onAuthStateChanged(auth, (user) => {
+    //   if (user) {
+    //     console.log("user logged in");
+    //     // User is signed in, see docs for a list of available properties
+    //     // https://firebase.google.com/docs/reference/js/firebase.User
+    //     const uid = user.uid;
+    //     // ...
+    //   } else {
+    //     console.log("user logged out");
+    //     // User is signed out
+    //     // navigate to login
+    //     navigate("/login");
+    //   }
+    // });
 
   } , []);
 

@@ -64,7 +64,7 @@ const VideoThumb: React.FC<{ videoUrl: string; videoImage: string, videoName: st
       {video && (
         <ReactPlayer
           url={videoUrl}
-          autoPlay
+          // autoPlay
           playing={true}
           width={"100%"}
           height={"100%"}
