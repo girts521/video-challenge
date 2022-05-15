@@ -30,7 +30,7 @@ const Home: React.FC = () => {
       headers: {
         'Content-Type': 'application/json',
         credentials: 'include',
-        'Access-Control-Allow-Origin': 'https://gkarcevskis-ecomm.herokuapp.com',
+        'Access-Control-Allow-Origin': 'https://ecom.gkarcevskis.com',
         "Access-Control-Allow-Credentials": 'true'
       }
     })
